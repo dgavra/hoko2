@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
+
 
 const SignUp = () => {
   const [name, setName] = useState('');
@@ -70,7 +72,9 @@ const SignUp = () => {
         <button type="submit" style={styles.button}>Sign Up</button>
 
         <p style={styles.redirectText}>
-          Already have an account? <a href="/login" style={styles.link}>Login</a>
+         <Link href="/login" passHref>
+            Login
+         </Link>
         </p>
       </form>
     </div>

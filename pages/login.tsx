@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -38,9 +39,9 @@ const Login = () => {
 
         <button type="submit" style={styles.button}>Login</button>
 
-        <p style={styles.redirectText}>
-          Don't have an account? <a href="/signup" style={styles.link}>Sign up</a>
-        </p>
+        <Link href="/signup" passHref>
+            signup
+        </Link>
       </form>
     </div>
   );
