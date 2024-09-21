@@ -5,8 +5,8 @@ const HomePage = () => {
     <div style={styles.container}>
       <h1 style={styles.title}>Hoko</h1>
       <p style={styles.tagline}>Experience the elegance of simplicity.</p>
-      <button style={styles.button} onClick={() => window.location.href = '/login'}>
-        Sign In
+      <button style={styles.button} onClick={() => window.location.href = '/signup'}>
+        Sign Up
       </button>
     </div>
   );
