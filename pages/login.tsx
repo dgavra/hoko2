@@ -62,7 +62,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
     width: '100%',
     maxWidth: '400px',
-    textAlign: 'center' as 'center',  // Ensure textAlign matches the expected CSS type
+    textAlign: 'center' as const,  // Use "as const" here
   },
   title: {
     color: '#fff',
@@ -110,5 +110,3 @@ const styles: { [key: string]: React.CSSProperties } = {
     textDecoration: 'none',
   },
 };
-
-export default Login;
