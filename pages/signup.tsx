@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import Link from 'next/link'; // Import Link from next/link
 
 
 const SignUp = () => {
-  const [name, setName] = useState('');
+  const [username, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,7 +16,7 @@ const SignUp = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ username, email, password }),
       });
 
       const data = await response.json();
@@ -39,7 +40,7 @@ const SignUp = () => {
           <label style={styles.label}>Name</label>
           <input
             type="text"
-            value={name}
+            value={username}
             onChange={(e) => setName(e.target.value)}
             required
             style={styles.input}
@@ -69,7 +70,12 @@ const SignUp = () => {
         </div>
 
         <button type="submit" style={styles.button}>Sign Up</button>
-
+        <div style={styles.redirectText}>
+            have an account?{' '}
+          <Link href="/login">
+            Sign In
+          </Link>
+        </div>
       </form>
     </div>
   );
