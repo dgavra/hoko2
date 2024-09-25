@@ -19,7 +19,7 @@ console.log('h');
 // Initialize Express
 const app = express();
 app.use(cors({
-  origin: 'https://hoko-three.vercel.app', // Frontend URL
+  //origin: 'https://hoko-three.vercel.app', // Frontend URL
   credentials: true // Allow credentials (cookies)
 }));
 app.use(express.urlencoded({ extended: true }));
@@ -42,6 +42,7 @@ app.use(
       secret: "helloworld",
       saveUninitialized: true,
       resave: false,
+      secure: true,
       cookie: { maxAge: 1000 * 60 * 60 * 24, sameSite: 'strict', secure: false   },
       store: MongoStore.create({
           client: mongoose.connection.getClient(),
