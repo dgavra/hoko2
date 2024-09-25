@@ -3,13 +3,8 @@ const passport = require('passport');
 const { Strategy } = require('passport-local');
 const bcrypt = require('bcrypt');
 const User  = require('../mongoose/user'); // Add this line to import the User model
-const cors = require('cors');
 
 const router = express.Router(); // Fix Router initialization
-router.use(cors({
-	origin: 'http://localhost:3000', // Change to your frontend's URL
-	credentials: true // Allow credentials (cookies)
-  }));
 
 // Helper function to compare passwords
 const comparePassword = (plain, hashed) => bcrypt.compareSync(plain, hashed);

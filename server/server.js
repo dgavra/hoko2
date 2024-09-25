@@ -19,7 +19,6 @@ console.log('h');
 // Initialize Express
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:3000', // Change to your frontend's URL
   credentials: true // Allow credentials (cookies)
 }));
 app.use(express.urlencoded({ extended: true }));
