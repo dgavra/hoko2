@@ -62,7 +62,7 @@ router.post('/api/auth', (req, res, next) => {
 				httpOnly: true, 
 				maxAge: 1000 * 60 * 60 * 24, 
 				path: 'https://hoko-three.vercel.app/', 
-				sameSite: 'strict', // or 'none' depending on your needs
+				sameSite: 'none', // or 'none' depending on your needs
 				secure: true // Change to true if using HTTPS
 			});
 			res.cookie('username', req.body.username, {
@@ -70,7 +70,7 @@ router.post('/api/auth', (req, res, next) => {
 				httpOnly: true, 
 				maxAge: 1000 * 60 * 60 * 24, 
 				path: 'https://hoko-three.vercel.app/', 
-				sameSite: 'strict', // or 'none' depending on your needs
+				sameSite: 'none', // or 'none' depending on your needs
 				secure: true // Change to true if using HTTPS
 			});
 			console.log('Cookie set:', res.getHeader('Set-Cookie'));
