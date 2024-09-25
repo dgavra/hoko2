@@ -18,8 +18,12 @@ console.log('h');
 
 // Initialize Express
 const app = express();
+app.use(cors({
+  origin: 'http://localhost:3000', // Change to your frontend's URL
+  credentials: true // Allow credentials (cookies)
+}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());  // Parse incoming requests as JSON
-app.use(cors());  // Enable CORS
 app.use(cookieParser("helloworld"));
 // Replace with your actual connection string
 const mongoURI = "mongodb+srv://dgavra840:Z024CMpUemcEiw8T@cluster0.xjrvb.mongodb.net/";
@@ -31,6 +35,7 @@ mongoose.connect(mongoURI)
 
 app.use(
   session({
+      name: 'In_Session',
       genid: function(req) {
         return genuuid() // use UUIDs for session IDs
       },

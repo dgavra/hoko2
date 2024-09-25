@@ -25,13 +25,15 @@ const Login = () => {
         headers: {
             "Content-type": "application/json; charset=UTF-8"
         },
+        credentials: 'include', // Include credentials (cookies)
       });
 
       const data = await response.json();
       if (response.ok) {
         console.log('Login successful:', data);
         // Optionally, redirect to the dashboard or another page
-        // window.location.href = "/dashboard"; // Redirect example
+
+        window.location.href = "/dashboard";
       } else {
         setErrorMessage(data.message || 'Error logging in');
         console.error('Error logging in:', data);

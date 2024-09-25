@@ -3,8 +3,13 @@ const passport = require('passport');
 const { Strategy } = require('passport-local');
 const bcrypt = require('bcrypt');
 const User  = require('../mongoose/user'); // Add this line to import the User model
+const cors = require('cors');
 
 const router = express.Router(); // Fix Router initialization
+router.use(cors({
+	origin: 'http://localhost:3000', // Change to your frontend's URL
+	credentials: true // Allow credentials (cookies)
+  }));
 
 // Helper function to compare passwords
 const comparePassword = (plain, hashed) => bcrypt.compareSync(plain, hashed);
@@ -56,15 +61,23 @@ router.post('/api/auth', (req, res, next) => {
 				return res.status(403).send('Bad Credentials');
 			}
 			// Set cookie and send success response
-      /*
-			res.cookie('hello', 'world', {
-				signed: true,
-				httpOnly: true,
-				maxAge: 1000 * 60 * 60 * 24, // 1 day
-				path: '/',
-				sameSite: 'strict',
-				secure: process.env.NODE_ENV === 'production', // Secure in production
-			});*/
+      
+			res.cookie('hello', 'helloworld', {
+				signed: true, 
+				httpOnly: true, 
+				maxAge: 1000 * 60 * 60 * 24, 
+				path: '/', 
+				sameSite: 'strict', // or 'none' depending on your needs
+				secure: false // Change to true if using HTTPS
+			});
+			res.cookie('username', req.body.username, {
+				signed: true, 
+				httpOnly: true, 
+				maxAge: 1000 * 60 * 60 * 24, 
+				path: '/', 
+				sameSite: 'strict', // or 'none' depending on your needs
+				secure: false // Change to true if using HTTPS
+			});
 			console.log('Cookie set:', res.getHeader('Set-Cookie'));
 			return res.status(200).json({ success: true, message: "Request was successful" });
 		});
