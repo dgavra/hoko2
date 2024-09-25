@@ -21,8 +21,6 @@ const app = express();
 app.use(cors({
   origin: 'https://hoko-three.vercel.app', // Frontend URL
   credentials: true,  // Allow credentials like cookies and headers
-  methods: 'GET,POST',  // Allowed methods
-  allowedHeaders: 'Content-Type,Authorization',  // Allowed headers
 }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());  // Parse incoming requests as JSON
