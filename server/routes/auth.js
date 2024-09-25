@@ -40,7 +40,7 @@ passport.use(
 );
 
 // Authentication route
-router.post('/api/auth', (req, res, next) => {
+router.post('/api/auth/', (req, res, next) => {
   console.log(req.body.username)
 	passport.authenticate('local', (err, user, info) => {
 		if (err) {
