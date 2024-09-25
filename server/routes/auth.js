@@ -61,7 +61,7 @@ router.post('/api/auth', (req, res, next) => {
 				signed: true, 
 				httpOnly: true, 
 				maxAge: 1000 * 60 * 60 * 24, 
-				path: '/', 
+				path: 'https://hoko-three.vercel.app/', 
 				sameSite: 'strict', // or 'none' depending on your needs
 				secure: false // Change to true if using HTTPS
 			});
@@ -69,7 +69,7 @@ router.post('/api/auth', (req, res, next) => {
 				signed: true, 
 				httpOnly: true, 
 				maxAge: 1000 * 60 * 60 * 24, 
-				path: '/', 
+				path: 'https://hoko-three.vercel.app/', 
 				sameSite: 'strict', // or 'none' depending on your needs
 				secure: false // Change to true if using HTTPS
 			});
