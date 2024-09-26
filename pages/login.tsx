@@ -16,7 +16,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3001/api/auth', {
+      const response = await fetch('https://localhost:3001/api/auth', {
         method: 'POST',
         body: JSON.stringify({
             username: inputName,

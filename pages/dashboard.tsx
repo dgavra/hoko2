@@ -6,7 +6,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         const fetchGreeting = async () => {
-            const response = await fetch('http://localhost:3001/api/greet', {
+            const response = await fetch('https://localhost:3001/api/greet', {
                 method: 'GET',
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"

@@ -33,7 +33,7 @@ mongoose.connect(mongoURI)
   .then(() => console.log('Connected to MongoDB Atlas!'))
   .catch((error) => console.error('Error connecting to MongoDB:', error));
 
-app.use(
+  app.use(
   session({
       name: 'In_Session',
       genid: function(req) {
