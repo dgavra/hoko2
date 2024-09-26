@@ -43,7 +43,7 @@ mongoose.connect(mongoURI)
       saveUninitialized: true,
       resave: false,
       secure: true,
-      cookie: { maxAge: 1000 * 60 * 60 * 24, sameSite: 'lax', secure: false   },
+      cookie: { maxAge: 1000 * 60 * 60 * 24, sameSite: 'lax', secure: true   },
       store: MongoStore.create({
           client: mongoose.connection.getClient(),
       }),
