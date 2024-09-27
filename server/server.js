@@ -19,7 +19,7 @@ console.log('h');
 // Initialize Express
 const app = express();
 app.use(cors({
-  origin: 'https://hoko-three.vercel.app', // Frontend URL
+  origin: 'https://www.hokodaga.com/', // Frontend URL
   credentials: true,  // Allow credentials like cookies and headers
 }));
 app.use(express.urlencoded({ extended: true }));
